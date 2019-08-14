@@ -7,19 +7,19 @@ require 'pry'
 # class Project
 #   @@all = []
 #   attr_accessor :image_link, :descrption, :location, :percent_funded
-# 
+#
 #   def initialize
 #     @@all << self
 #   end
-# 
+#
 #   def self.all
 #     @@all
 #   end
-# 
+#
 #   def self.reset_all
 #     @@all.clear
 #   end
-# 
+#
 #  end
 
 def create_project_hash
@@ -27,7 +27,7 @@ def create_project_hash
 
   html = File.read('fixtures/kickstarter.html')
   kickstarter = Nokogiri::HTML(html)
-  
+
   #doc = Nokogiri::HTML(open("fixtures/kickstarter.html"))
 
   projects = {}
@@ -35,7 +35,7 @@ def create_project_hash
   kickstarter.css(li.project.grid_4).each do |project|
     projects[project] = {}
   end
-  projects 
+  projects
 end
   #
   # doc.css("post").each do |post|
@@ -48,4 +48,3 @@ end
   # end
   #
   # projects
-
